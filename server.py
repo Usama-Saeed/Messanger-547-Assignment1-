@@ -24,10 +24,10 @@ print 'Socket now listening'
 #now keep talking with the client
 while (conn1 and conn0):
 	#wait to accept a connection - blocking call
-	data=conn1.recv(1024)
-	conn0.send(data)
 	data=conn0.recv(1024)
-	conn1.send(data)	    
+	conn1.send(data)
+	data=conn1.recv(1024)
+	conn0.send(data)	    
 
 conn1.close()
 conn0.close()
